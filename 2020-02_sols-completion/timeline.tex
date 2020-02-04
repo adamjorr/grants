@@ -1,0 +1,71 @@
+\RequirePackage{luatex85}
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage[letterpaper,margin=1in]{geometry}
+\usepackage{url}
+\usepackage{graphicx}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[style=nature, citestyle=authoryear]{biblatex}
+\usepackage{tikz}
+\usepackage{wrapfig}
+\usepackage{lineno}
+\usepackage{xcolor,colortbl}
+\usepackage{multicol}
+
+\begin{document}
+\linenumbers
+
+
+\section{Timeline}
+
+\definecolor{a}{rgb}{0,0.5,0}
+\definecolor{b}{rgb}{0.5,0.75,0.5}
+\definecolor{c}{rgb}{1.0,1.0,1.0}
+\definecolor{d}{rgb}{1.0, 0.75, 0}
+\definecolor{e}{rgb}{1.0, 0.8, 0.3}
+
+\begin{tabular}{l|p{3em}p{3em}|p{3em}p{3em}|p{3em}p{3em}} &
+\multicolumn{2}{c|}{Spring} & \multicolumn{2}{c|}{Summer} & \multicolumn{2}{c}{Fall}\\
+\hline
+\texttt{kbbq} development &
+\cellcolor{b} & \cellcolor{c} &
+\cellcolor{c} & \cellcolor{c} &
+\cellcolor{c} & \cellcolor{c} \\
+\texttt{kbbq} writing (Chapter 3) &
+\cellcolor{a}&\cellcolor{b}&
+\cellcolor{c}&\cellcolor{c}&
+\cellcolor{c}&\cellcolor{c}\\
+\texttt{mdm-sim} development &
+\cellcolor{c}&\cellcolor{a}&
+\cellcolor{b}&\cellcolor{c}&
+\cellcolor{c}&\cellcolor{c}\\
+\texttt{mdm-sim} writing (Chapter 4) &
+\cellcolor{c}&\cellcolor{c}&
+\cellcolor{a}&\cellcolor{b}&
+\cellcolor{c}&\cellcolor{c}\\
+Finalize dissertation & \cellcolor{c} & \cellcolor{c} & \cellcolor{c} & \cellcolor{b} & \cellcolor{a} & \cellcolor{b} \\
+Defense and editing & \cellcolor{c} & \cellcolor{c} & \cellcolor{c} & \cellcolor{c} & \cellcolor{c} & \cellcolor{a} \\
+& & & & & & \\
+Documentation and Tutorials & \cellcolor{c} & \cellcolor{c} & \cellcolor{c} & \cellcolor{c} & \cellcolor{e} & \cellcolor{d} \\
+New Student Mentoring & \cellcolor{c} & \cellcolor{c} & \cellcolor{c} & \cellcolor{c} & \cellcolor{d} & \cellcolor{e} \\
+
+\end{tabular}
+
+\vskip 2em
+
+
+My timeline for graduation is summarized in the figure above. The projects I am finishing will be the 3rd and 4th chapters of my dissertation; the second chapter is complete. This Spring my focus is finishing development of \texttt{kbbq}, a program for recalibrating sequencing data. Work on the program is nearly complete, and a written description of the project including examples of its utility and benchmarking data showing its performance relative to similar tools will be finished by the end of Spring. This chapter will use data from my second chapter to show how recalibration affects sensitivity to detect mutations. At the same time, development of \texttt{mdm-sim} will commence. \texttt{mdm-sim} is a tool to simulate mutations in Next Generation Sequencing data. Development of the software will be complete by early summer, and the chapter describing the program and its application will be complete by the end of summer. Towards the end of summer I will also begin finalizing my dissertation, including writing introductory and concluding chapters describing how the work done in each chapter supports the others and enables the sensitive detection of mutations in non-model organisms. Finally, I will defend my dissertation at the end of October and make any modifications necessary by the November 13 deadline. These estimated dates are described in green on the timeline above.
+
+This award will give me extra time to write additional documentation and tutorials for the software associated with my dissertation to accompany each chapter. Documentation is important to improve the usability of the software and tutorials help attract new users while helping even non-technical users become accustomed to using the software. Overall, this extra polish will make the software feel more complete and give users confidence that they are using the software correctly and can trust the results. Furthermore, it enables wider distribution of the software which leads to more usage, as users have documentation they can reference when they run into an issue rather than giving up.
+
+Our lab is also expecting a new graduate student in the fall, so this award will give me more time to help mentor her before I graduate. This will help ensure she gets a good start to her graduate career and learns good practices for writing scientific software, which is difficult to teach in a classroom setting. The award will help make my software more polished and easy to use while contributing to the mentorship of a new graduate student. These activities are shown in yellow on the timeline above.
+
+
+
+
+
+
+
+\end{document}
+
