@@ -13,11 +13,16 @@
 \usepackage{xcolor,colortbl}
 \usepackage{multicol}
 
+\edef\restoreparindent{\parindent=\the\parindent\relax}
+\usepackage{parskip}
+\restoreparindent
+
+
 \begin{document}
 \linenumbers
 
 
-\section{Timeline}
+\section*{Timeline}
 
 \definecolor{a}{rgb}{0,0.5,0}
 \definecolor{b}{rgb}{0.5,0.75,0.5}

@@ -13,14 +13,62 @@
 \usepackage{xcolor,colortbl}
 \usepackage{multicol}
 
+\edef\restoreparindent{\parindent=\the\parindent\relax}
+\usepackage{parskip}
+\restoreparindent
+
+
 \begin{document}
 \linenumbers
 
+\section*{Significance and Impact}
+
 % 1-2 page statement directed to the general public explaining the significance of your dissertation research and its impact on society 
 
+The goal of my research is to create models and software tools to help identify mutations, even in contexts where little is known about the organism or samples studied.
 Cells contain DNA, which holds the information used to create functional molecules that interact with the world in one way or another.
-When the DNA is changed for one reason or another, the functional molecules could also change and manifest differently.
-A change in DNA is called a mutation, and mutations can occur when the DNA interacts with a harmful chemical or if it's incorrectly copied when cells divide.
+A change in DNA is called a mutation, and mutations can occur when the DNA interacts with a chemical or it's incorrectly copied when cells divide.
+When the DNA is changed, the associated functional molecules could also change and manifest differently, causing a change in phenotype.
+Consequently, mutations in a person's cells can cause a variety of diseases such as cancer.
+
+The primary difficulty of studying mutations and how they cause disease is accurately detecting these mutations.
+Current DNA sequencing technology has a high error rate--around 0.1-1\%--while most mutations occur around rates of $10^{-9}$.
+This makes it difficult to sensitively detect mutations, especially when there are not many mutations between samples, as is the case when sequencing multiple samples from the same individual.
+In these cases, there is much more noise than signal in the data.
+However, improved models of mutation and sequencing can help distinguish between sequencing errors and mutations.
+
+When it's easier to tell which putative mutations are real, researchers can spend less time and money on sequencing and data processing and more on the causes and effects of the detected mutations.
+This may be using mutations in a cohort of people to understand how a mutation influences a trait, finding which mutations are likely to cause cancer, or trying to understand mutation rates. 
+In all these cases, sensitively detecting mutations is vital because a true mutation that is missed may contribute to the characteristic under investigation.
+When the mutation is missed, it won't be considered in downstream analyses.
+My dissertation research aims to help resolve these problems by 1) improving the ability to distinguish between sequencing errors and mutations and 2) giving researchers tools to understand where they may be missing mutations and quantify the amount of uncertainty in their data.
+This will ultimately lead to improved societal outcomes, including in advancements in personalized medicine, cancer therapy, and rare disease research.
+
+In the first project of my dissertation, I develop a pipeline to sensitively detect mutations in multiple samples taken from a \textit{Eucalyptus} tree.
+While it is well known that cancers have a large number of mutations and high mutation rates, normal mutation rates within individuals are not well studied.
+Here, I quantify this mutation rate by taking advantage of the branching pattern of the tree and replicates to filter out false positive mutations.
+I also use the tree structure of the data to estimate the false negative and false discovery rates at each step in the analysis, providing insight into how each
+step of the pipeline affects how many mutations the analysis misses and conditions that yield the highest recovery rates.
+Understanding how filters affect the trade-off between sensitivity and specificity is important for understanding the types of mutations a particular analysis might be missing and quantifying that helps correct for technical biases that an analysis might introduce.
+This provided valuable insight into somatic mutation rates in plants and produced software anyone can use to perform similar tasks.
+
+In the second project of my dissertation, I implement a method to recalibrate base quality scores without a reference.
+Base quality scores are assigned to DNA sequencing data and are an estimate of the probability that the stated base is an error.
+This quality score helps researchers know which sequences are trustworthy and can be used for further analysis and which are likely errors that can be ignored.
+However, these quality scores are not always accurate.
+Base quality score recalibration is the process of updating these scores so they more accurately reflect the true probability that the base is correct.
+Current methods to do this usually require a reference genome and a database containing the possible mutations in the organism.
+If you're trying to find mutation in an organism where you may not know all the possible mutations beforehand, this is not an ideal situation.
+The problem is even worse if you don't have a reference genome to use.
+However, by analyzing overlapping subsets of the sequencing reads it's possible to find sequencing errors and use other features of those errors to increase or decrease the quality score in similar reads.
+This works because sequencing experiments usually sequence the same piece of DNA multiple times.
+Therefore, if you find a subsequence that occurs only once in your entire dataset, it likely contains an error.
+If you often find these errors at the end of the read, similar sequences at the ends of reads should have a lower quality score.
+Using this strategy means base quality score recalibration can be done in species without a reference genome.
+It may also be a good strategy for uncovering novel mutations since it doesn't require a database of variable sites that may be incomplete.
+Overall, this project produced a high-quality piece of software that provides a straightforward way to improve the quality of any study that seeks to identify mutations.
+
+
 
 
 
